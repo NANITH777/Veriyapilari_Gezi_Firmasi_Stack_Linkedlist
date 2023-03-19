@@ -68,6 +68,25 @@ void poplist()
     }
 }
 
+void displaylist()
+{
+    if(top==NULL)
+    {
+        printf("Otobus nos!!\n");
+    }
+    else
+    {
+        struct Stack_Yolcu * temp=top;
+        printf("\n----------------otobus-------------\n");
+        while(temp!=NULL)
+        {
+            printf("\n %d.sira -- Yolcu Adi: %s -- Yolcu Soyadi: %s\n", temp->sira, temp->ad, temp->soyad);
+            temp=temp->next;
+        }
+        printf("\n-------------------------------------\n");
+    }
+}
+
 int main()
 {
     printf("Hello world!\n");
