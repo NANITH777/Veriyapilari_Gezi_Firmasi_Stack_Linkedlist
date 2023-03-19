@@ -89,6 +89,51 @@ void displaylist()
 
 int main()
 {
-    printf("Hello world!\n");
+    top=NULL;
+    int choice;
+    int sira;
+    char ad[50];
+    char soyad[50];
+
+    printf("\t\n\n bizim gezi firmasimiza hosgeldiniz\n");
+    printf("\t 1 Yolcu bilgileri ekleme\n");
+    printf("\t 2 Yolcu bilgileri silme\n");
+    printf("\t 3 alinmis koltuk sayisi ve otobusun boyutu\n");
+    printf("\t 4 yolcular listesi\n");
+    printf("\t 5 sistemden cik\n");
+
+    do
+    {
+        printf("\t enter your choice\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+                printf("\t kacinci sira: ");
+                scanf("%d", &sira);
+                printf("\t Yolcu adi:");
+                scanf("%s", &ad);
+                printf("\t Yolcu soyadi:");
+                scanf("%s", &soyad);
+                pushlist(sira, ad, soyad);
+                break;
+            case 2:
+                poplist();
+                break;
+            case 3:
+                printf("\t alinmis koltuk sayisi: %d ve otobusun boyutu: %d\n", size+1, boyut);
+                break;
+            case 4:
+                displaylist();
+                break;
+            case 5:
+                exit(0);
+                break;
+            default:
+                printf("\n Dogru tusa basin\n");
+        }
+
+    }while(choice!=0);
+
     return 0;
 }
